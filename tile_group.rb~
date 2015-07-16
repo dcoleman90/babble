@@ -1,0 +1,29 @@
+module TileGroup
+	attr_accessor :tiles, :size
+	
+	
+	def initialize
+		@tiles = Array.new
+		@size = size
+	end
+	
+	def append(tile)
+		@tiles << tile
+		@size = @tiles.length
+	end
+	
+	def remove(tile)
+		@tiles.delete_at(@tiles.index(tile))
+		@size = @tiles.length
+	end
+	
+	def to_s
+		string = ""
+		 @tiles.each {|a| string << a.to_s}
+		return string
+	end
+	
+	def size
+		return @tiles.size
+	end
+end

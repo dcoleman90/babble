@@ -1,0 +1,59 @@
+class TileRack
+
+include TileGroup
+require_relative 'word.rb'
+
+MAX = 7
+
+def initialize
+	super
+	end
+
+
+	
+	
+def number_of_tiles_needed
+	
+	return MAX - @size	
+end
+
+
+def has_tiles_for? text
+
+arr = text.split("")
+
+sym_array = arr.map &:to_sym
+
+tile_copy = Array.new(@tiles)
+
+sym_array.each do |x|
+
+	if (tile_copy.include?(x))
+	
+		tile_copy.delete_at(tile_copy.index(x))
+	else return false			
+end
+	end
+return true
+end
+
+
+
+
+
+def remove_word text
+	arr = text.split("")
+	
+	word_array = Word.new
+	
+	word_array = arr.map &:to_sym
+
+	word_array.each do |x|
+		@tiles::delete(x)
+		@size = @tiles.size
+		next
+		
+	return word_array
+	end
+end
+end

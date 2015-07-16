@@ -1,0 +1,19 @@
+class Word
+
+	
+	include TileGroup
+	
+def intialize
+super	
+end
+	
+def score
+	sum = 0
+	@tiles.each do |x|
+	
+	return 	TileBag.points_for(x)
+	
+end
+	end
+
+end 
